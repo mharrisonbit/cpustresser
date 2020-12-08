@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CPUStresser"
+             x:Class="CPUStresser.MainPage">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="This is just to stress the cpu" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+        <Button Clicked="Button_Clicked" Text="Let's Stress The CPU"/>
+        <Button Clicked="Button_Clicked_1" Text="Crash Me"/>
+    </StackLayout>
+
+</ContentPage>
