@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -16,6 +17,7 @@ namespace CPUStresser
         }
 
         public bool RunApp { get; private set; }
+        // static List<byte[]> memoryHog = new List<byte[]>();
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
@@ -26,10 +28,12 @@ namespace CPUStresser
                 //for (int x = 0; x < 100000; x++)
                 {
                     await Task.Delay(5);
-                    var num = 123456789987654321;
+                    var num = 1234567899876543210;
                     // bool isPrime = true;
                     for (long i = 0; i <= num; i++)
                     {
+                        IntPtr hglobal = Marshal.AllocHGlobal(1000);
+                        // memoryHog.Add(new byte[1024]);//build a memory leak
                         bool isPrime = true; // Move initialization to here
                         for (long j = 2; j < i; j++) // you actually only need to check up to sqrt(i)
                         {
